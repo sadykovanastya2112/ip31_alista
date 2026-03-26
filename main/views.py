@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Genre, Track
-from .forms import GenreForm, TrackForm
+from .models import Genre, Track, Artist
+from .forms import GenreForm, TrackForm, ArtistForm
 
 def index (request):
     return render(request, 'index.html')
@@ -18,6 +18,10 @@ def add_genre(request):
     else:
         genreform = GenreForm()
         return render(request, "add_genre.html", {'form': genreform})
+    
+def artists(request):
+    a = Artist.objects.all()
+    return render(request, 'artists.html', {'artists': a})
 
 def edit_genre(request, id_genre):
     g = Genre.objects.get(id=id_genre)

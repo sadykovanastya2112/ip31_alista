@@ -20,8 +20,8 @@
                     <td><a href="/editarist/{{a.id}}">Редактирова</a></td>
                     <td><a href="/deleteartist/{{a.id}}">Удалить</a></td>
                 </tr>
-                {{ endfor }}
+                {% endfor %}
         </tbody>
     </table>
-    <a href="/add_artist">Добавить исполнителя</a>
-   {% endblock content %} 
+<a href="/add_artist">Добавить исполнителя</a>
+{% endblock content %} 
